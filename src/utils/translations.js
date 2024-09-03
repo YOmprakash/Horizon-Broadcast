@@ -1,52 +1,52 @@
-// src/utils/translations.js
-
 const translations = {
-    Home: {
-      French: 'Accueil',
-      German: 'Zuhause',
-      Russian: 'Главная',
-      Spanish: 'Inicio',
-      Chinese: '主页',
-    },
-    Movies: {
-      French: 'Films',
-      German: 'Filme',
-      Russian: 'Фильмы',
-      Spanish: 'Películas',
-      Chinese: '电影',
-    },
-    'TV Shows': {
-      French: 'Émissions de télévision',
-      German: 'Fernsehsendungen',
-      Russian: 'Телепередачи',
-      Spanish: 'Programas de TV',
-      Chinese: '电视节目',
-    },
-    Sports: {
-      French: 'Des sports',
-      German: 'Sportarten',
-      Russian: 'Виды спорта',
-      Spanish: 'Deportes',
-      Chinese: '体育',
-    },
-    Live: {
-      French: 'En direct',
-      German: 'Leben',
-      Russian: 'Прямой эфир',
-      Spanish: 'En Vivo',
-      Chinese: '直播',
-    },
-    Settings: {
-      French: 'Paramètres',
-      German: 'Einstellungen',
-      Russian: 'Настройки',
-      Spanish: 'Configuración',
-      Chinese: '设置',
-    },
-  };
-  
-  export const translate = (menu, language) => {
-    if (language === 'English') return menu;
-    return translations[menu]?.[language] || menu;
-  };
-  
+  English: {
+    Home: 'Home',
+    Movies: 'Movies',
+    TVShows: 'TV Shows',
+    Sports: 'Sports',
+    Live: 'Live',
+    Settings: 'Settings',
+  },
+  French: {
+    Home: 'Accueil',
+    Movies: 'Films',
+    TVShows: 'Émissions de télévision',
+    Sports: 'Sports',
+    Live: 'En direct',
+    Settings: 'Paramètres',
+  },
+  German: {
+    Home: 'Startseite',
+    Movies: 'Filme',
+    TVShows: 'TV-Shows',
+    Sports: 'Sport',
+    Live: 'Live',
+    Settings: 'Einstellungen',
+  },
+  Russian: {
+    Home: 'Главная',
+    Movies: 'Фильмы',
+    TVShows: 'Телешоу',
+    Sports: 'Спорт',
+    Live: 'Прямой эфир',
+    Settings: 'Настройки',
+  },
+  Spanish: {
+    Home: 'Inicio',
+    Movies: 'Películas',
+    TVShows: 'Programas de TV',
+    Sports: 'Deportes',
+    Live: 'En vivo',
+    Settings: 'Configuración',
+  },
+  Chinese: {
+    Home: '首页',
+    Movies: '电影',
+    TVShows: '电视节目',
+    Sports: '体育',
+    Live: '直播',
+    Settings: '设置',
+  },
+};
+
+export default translations;

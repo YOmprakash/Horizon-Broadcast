@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navbar />
+      <Navbar language={language} />
         <Routes>
           <Route path="/" element={<Home language={language} />} />
           <Route path="/movies" element={<Movies language={language} />} />

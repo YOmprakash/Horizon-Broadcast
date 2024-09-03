@@ -1,5 +1,9 @@
 
 import { Link } from 'react-router-dom';
+
+import translations from "../utils/translations";
+
+
 const menuItems = [
   { name: 'Home', path: '/' },
   { name: 'Movies', path: '/movies' },
@@ -12,7 +16,8 @@ const menuItems = [
 
 
 
-const Navbar = ({ onMenuClick }) => {
+const Navbar = ({ onMenuClick,language }) => {
+  const currentTranslations = translations[language] || translations['English'];
   return (
     <nav className="flex items-center justify-between bg-black p-4 text-white">
       {/* Logo Section */}
@@ -25,14 +30,13 @@ const Navbar = ({ onMenuClick }) => {
 
       {/* Menu Items */}
       <div className="flex space-x-4">
-        {menuItems.map((menu) => (
+        {menuItems.map((item) => (
           <Link
-            key={menu.name}
-            to={menu.path}
-            onClick={() => onMenuClick(menu.name)}
+            key={item.name}
+            to={item.path}
             className="hover:bg-gray-700 px-3 py-2 rounded"
           >
-            {menu.name}
+            {currentTranslations[item.name]}
           </Link>
         ))}
       </div>
@@ -40,7 +44,7 @@ const Navbar = ({ onMenuClick }) => {
       {/* Settings Link */}
       <div>
         <Link to="/settings" className="hover:bg-gray-700 px-3 py-2 rounded">
-          Settings
+        {currentTranslations.Settings}
         </Link>
       </div>
     </nav>
