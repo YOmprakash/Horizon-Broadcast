@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -11,8 +11,13 @@ import Live from "./pages/Live";
 import Settings from "./components/Settings";
 
 const App = () => {
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'English';
+  });
 
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
   return (
     <Router>
       <div>
@@ -25,7 +30,7 @@ const App = () => {
           <Route path="/live" element={<Live language={language} />} />
           <Route
             path="/settings"
-            element={<Settings onLanguageChange={setLanguage} />}
+            element={<Settings language={language} onLanguageChange={setLanguage} />}
           />
         </Routes>
       </div>

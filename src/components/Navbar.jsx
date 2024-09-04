@@ -7,7 +7,7 @@ import translations from "../utils/translations";
 const menuItems = [
   { name: 'Home', path: '/' },
   { name: 'Movies', path: '/movies' },
-  { name: 'TV Shows', path: '/tv-shows' },
+  { name: 'TVShows', path: '/tv-shows' },
   { name: 'Sports', path: '/sports' },
   { name: 'Live', path: '/live' },
 ];
@@ -19,11 +19,11 @@ const menuItems = [
 const Navbar = ({ onMenuClick,language }) => {
   const currentTranslations = translations[language] || translations['English'];
   return (
-    <nav className="flex items-center justify-between bg-black p-4 text-white">
+    <nav className="flex items-center justify-between p-4 text-white bg-black">
       {/* Logo Section */}
       <div >
        <Link to='/'>
-       <span className="font-bold text-xl">Horizon Broadcast</span>
+       <span className="text-xl font-bold">Horizon Broadcast</span>
        </Link>
        
       </div>
@@ -34,7 +34,7 @@ const Navbar = ({ onMenuClick,language }) => {
           <Link
             key={item.name}
             to={item.path}
-            className="hover:bg-gray-700 px-3 py-2 rounded"
+            className="px-3 py-2 rounded hover:bg-gray-700"
           >
             {currentTranslations[item.name]}
           </Link>
@@ -43,7 +43,7 @@ const Navbar = ({ onMenuClick,language }) => {
 
       {/* Settings Link */}
       <div>
-        <Link to="/settings" className="hover:bg-gray-700 px-3 py-2 rounded">
+        <Link to="/settings" className="px-3 py-2 rounded hover:bg-gray-700">
         {currentTranslations.Settings}
         </Link>
       </div>
