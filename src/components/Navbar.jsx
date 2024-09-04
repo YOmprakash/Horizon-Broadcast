@@ -1,22 +1,29 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaCog } from 'react-icons/fa';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaCog } from "react-icons/fa";
 import translations from "../utils/translations";
 
 const menuItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Movies', path: '/movies' },
-  { name: 'TVShows', path: '/tv-shows' },
-  { name: 'Sports', path: '/sports' },
-  { name: 'Live', path: '/live' },
+  { name: "Home", path: "/" },
+  { name: "Movies", path: "/movies" },
+  { name: "TVShows", path: "/tv-shows" },
+  { name: "Sports", path: "/sports" },
+  { name: "Live", path: "/live" },
 ];
 
-const languages = ['English', 'French', 'German', 'Russian', 'Spanish', 'Chinese'];
+const languages = [
+  "English",
+  "French",
+  "German",
+  "Russian",
+  "Spanish",
+  "Chinese",
+];
 
 const Navbar = ({ language, onLanguageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const currentTranslations = translations[language] || translations['English'];
+  const currentTranslations = translations[language] || translations["English"];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -31,14 +38,19 @@ const Navbar = ({ language, onLanguageChange }) => {
       <div className="flex items-center justify-between">
         {/* Logo Section */}
         <div>
-          <Link to='/'>
-            <span className="text-xl font-bold text-white">Horizon Broadcast</span>
+          <Link to="/">
+            <span className="text-xl font-bold text-white">
+              Horizon Broadcast
+            </span>
           </Link>
         </div>
 
         {/* Hamburger Menu Button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-white focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -46,13 +58,22 @@ const Navbar = ({ language, onLanguageChange }) => {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              />
             </svg>
           </button>
         </div>
 
         {/* Menu Items */}
-        <div className={`md:flex md:flex-row md:space-x-4 ${isOpen ? 'block' : 'hidden'} md:block`}>
+        <div
+          className={`md:flex md:flex-row md:space-x-4 ${
+            isOpen ? "block" : "hidden"
+          } md:block`}
+        >
           {menuItems.map((item) => (
             <Link
               key={item.name}
@@ -66,7 +87,10 @@ const Navbar = ({ language, onLanguageChange }) => {
 
         {/* Settings Button */}
         <div className="relative">
-          <button onClick={toggleSettings} className="py-2 text-white rounded hover:bg-gray-700">
+          <button
+            onClick={toggleSettings}
+            className="py-2 text-white rounded hover:bg-gray-700"
+          >
             {/* Icon on mobile, text on larger screens */}
             <span className="md:hidden">
               <FaCog size={24} />
@@ -84,7 +108,7 @@ const Navbar = ({ language, onLanguageChange }) => {
                   onChange={(e) => onLanguageChange(e.target.value)}
                   className="block w-full p-2 mt-2 border rounded"
                 >
-                  {languages.map(lang => (
+                  {languages.map((lang) => (
                     <option key={lang} value={lang}>
                       {lang}
                     </option>

@@ -1,6 +1,5 @@
-
-import FullScreenImage from '../components/FullScreenImage';
-import liveImage from '../assets/live.jpg';
+import FullScreenImage from "../components/FullScreenImage";
+import liveImage from "../assets/live.jpg";
 
 const Live = () => {
   return <FullScreenImage image={liveImage} />;
