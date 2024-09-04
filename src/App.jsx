@@ -8,7 +8,6 @@ import Movies from "./pages/Movies";
 import TVShows from "./pages/TVshows";
 import Sports from "./pages/Sports";
 import Live from "./pages/Live";
-import Settings from "./components/Settings";
 
 const App = () => {
   const [language, setLanguage] = useState(() => {
@@ -21,17 +20,14 @@ const App = () => {
   return (
     <Router>
       <div>
-      <Navbar language={language} />
+      <Navbar  onLanguageChange={setLanguage} language={language} />
         <Routes>
           <Route path="/" element={<Home language={language} />} />
           <Route path="/movies" element={<Movies language={language} />} />
           <Route path="/tv-shows" element={<TVShows language={language} />} />
           <Route path="/sports" element={<Sports language={language} />} />
           <Route path="/live" element={<Live language={language} />} />
-          <Route
-            path="/settings"
-            element={<Settings language={language} onLanguageChange={setLanguage} />}
-          />
+          
         </Routes>
       </div>
     </Router>
