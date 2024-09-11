@@ -22,11 +22,11 @@ const App = () => {
       <div>
         <Navbar onLanguageChange={setLanguage} language={language} />
         <Routes>
-          <Route path="/" element={<Home language={language} />} />
-          <Route path="/movies" element={<Movies language={language} />} />
-          <Route path="/tv-shows" element={<TVShows language={language} />} />
-          <Route path="/sports" element={<Sports language={language} />} />
-          <Route path="/live" element={<Live language={language} />} />
+          <Route path="/" element={<Home  />} />
+          <Route path="/movies" element={<Movies  />} />
+          <Route path="/tv-shows" element={<TVShows  />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/live" element={<Live  />} />
         </Routes>
       </div>
     </Router>
