@@ -1,7 +1,7 @@
 const FullScreenImage = ({ image }) => {
   return (
     <div
-      className="relative h-screen bg-center bg-cover"
+      className="h-screen bg-center bg-cover "
       style={{ backgroundImage: `url(${image})` }}
     >
       
