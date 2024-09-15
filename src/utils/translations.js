@@ -47,6 +47,14 @@ const translations = {
     Live: '直播',
     Settings: '设置',
   },
+  Japanesh: {
+    Home: '家',
+    Movies: '映画',
+    TVShows: 'テレビ',
+    Sports: 'スポーツ',
+    Live: 'ライブ',
+    Settings: '設定',
+  },
 };
 
 export default translations;

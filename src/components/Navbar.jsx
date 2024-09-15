@@ -18,6 +18,7 @@ const languages = [
   "Russian",
   "Spanish",
   "Chinese",
+  '設定'
 ];
 
 const Navbar = ({ language, onLanguageChange }) => {
