@@ -19,9 +19,11 @@ const App = () => {
     setLanguage(lang);
   };
 
+
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
+  
   return (
     <Router>
       <div>

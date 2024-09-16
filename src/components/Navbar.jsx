@@ -18,7 +18,7 @@ const languages = [
   "Russian",
   "Spanish",
   "Chinese",
-  '設定'
+  'Japanesh',
 ];
 
 const Navbar = ({ language, onLanguageChange }) => {
@@ -103,7 +103,7 @@ const Navbar = ({ language, onLanguageChange }) => {
           {showSettings && (
             <div className="absolute right-0 z-50 w-48 mt-2 bg-white rounded-md shadow-lg">
               <div className="p-4">
-                <label className="block text-gray-700">Select Language:</label>
+              <label className="block text-gray-700">{currentTranslations.Settings}</label>
                 <select
                   value={language}
                   onChange={(e) => onLanguageChange(e.target.value)}
